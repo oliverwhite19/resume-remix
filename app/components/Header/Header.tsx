@@ -20,7 +20,14 @@ const Header = () => {
                 <div className={classes.titleContainer}>
                     <H1
                         variant="gradient"
-                        gradient={{ from: 'white', to: 'red', deg: 45 }}
+                        gradient={{
+                            from:
+                                theme.colorScheme === 'dark'
+                                    ? 'white'
+                                    : 'black',
+                            to: 'red',
+                            deg: 45,
+                        }}
                     >
                         Oliver White
                     </H1>
@@ -36,6 +43,7 @@ const Header = () => {
                             size={isSmallScreen ? 'md' : 'lg'}
                             color="red"
                             compact={isSmallScreen}
+                            variant="outline"
                         >
                             Download PDF Resume
                         </Button>
@@ -46,6 +54,7 @@ const Header = () => {
                         size={isSmallScreen ? 'md' : 'lg'}
                         color="red"
                         compact={isSmallScreen}
+                        variant="outline"
                     >
                         Contact
                     </Button>
