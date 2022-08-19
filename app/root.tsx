@@ -105,21 +105,9 @@ export default function Root() {
                             content="My resume and projects website"
                         />
                         <link rel="apple-touch-icon" href="/logo192.png" />
-                        <link
-                            href="/fonts/Oxygen.css"
-                            rel="preload"
-                            as="style"
-                        ></link>
-                        <link
-                            href="/fonts/Cairo.css"
-                            rel="preload"
-                            as="style"
-                        ></link>
-                        <link
-                            href="/fonts/Amiko.css"
-                            rel="preload"
-                            as="style"
-                        ></link>
+                        <link href="/fonts/Oxygen.css" rel="stylesheet"></link>
+                        <link href="/fonts/Cairo.css" rel="stylesheet"></link>
+                        <link href="/fonts/Amiko.css" rel="stylesheet"></link>
                         <title>Oliver White - Resume</title>
 
                         <script
