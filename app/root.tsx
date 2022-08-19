@@ -6,13 +6,11 @@ import {
 } from '@remix-run/react';
 import type { ColorScheme } from '@mantine/core';
 import { MantineProvider, ColorSchemeProvider, Global } from '@mantine/core';
-import { ModalsProvider } from '@mantine/modals';
 import { theme } from './theme';
 import { useLocalStorage } from '@mantine/hooks';
 
 import { StylesPlaceholder } from '@mantine/remix';
 import styled from '@emotion/styled';
-import { ContactModal } from './components/Header/ContactModal';
 
 const classAdd = `
   (function() {
@@ -93,59 +91,44 @@ export default function Root() {
                 theme={{ ...{ colorScheme }, ...theme }}
                 withNormalizeCSS
             >
-                <ModalsProvider
-                    modals={{
-                        contact: ContactModal /* ...other modals */,
-                    }}
-                >
-                    <html lang="en">
-                        <head>
-                            <meta charSet="utf-8" />
-                            <link rel="icon" href="/favicon.ico" />
-                            <meta
-                                name="viewport"
-                                content="width=device-width, initial-scale=1"
-                            />
-                            <meta name="theme-color" content="#000000" />
-                            <meta
-                                name="description"
-                                content="My resume and projects website"
-                            />
-                            <link rel="apple-touch-icon" href="/logo192.png" />
-                            <link
-                                href="/fonts/Oxygen.css"
-                                rel="stylesheet"
-                            ></link>
-                            <link
-                                href="/fonts/Cairo.css"
-                                rel="stylesheet"
-                            ></link>
-                            <link
-                                href="/fonts/Amiko.css"
-                                rel="stylesheet"
-                            ></link>
-                            <title>Oliver White - Resume</title>
+                <html lang="en">
+                    <head>
+                        <meta charSet="utf-8" />
+                        <link rel="icon" href="/favicon.ico" />
+                        <meta
+                            name="viewport"
+                            content="width=device-width, initial-scale=1"
+                        />
+                        <meta name="theme-color" content="#000000" />
+                        <meta
+                            name="description"
+                            content="My resume and projects website"
+                        />
+                        <link rel="apple-touch-icon" href="/logo192.png" />
+                        <link href="/fonts/Oxygen.css" rel="stylesheet"></link>
+                        <link href="/fonts/Cairo.css" rel="stylesheet"></link>
+                        <link href="/fonts/Amiko.css" rel="stylesheet"></link>
+                        <title>Oliver White - Resume</title>
 
-                            <script
-                                key="unflashing-dark-mode"
-                                dangerouslySetInnerHTML={{
-                                    __html: classAdd,
-                                }}
-                                defer
-                            />
-                            <Scripts />
-                            <MyGlobalStyles />
-                            <StylesPlaceholder />
-                        </head>
-                        <body>
-                            <Layout>
-                                <Outlet />
-                            </Layout>
-                            <ScrollRestoration />
-                            <LiveReload />
-                        </body>
-                    </html>
-                </ModalsProvider>
+                        <script
+                            key="unflashing-dark-mode"
+                            dangerouslySetInnerHTML={{
+                                __html: classAdd,
+                            }}
+                            defer
+                        />
+                        <Scripts />
+                        <MyGlobalStyles />
+                        <StylesPlaceholder />
+                    </head>
+                    <body>
+                        <Layout>
+                            <Outlet />
+                        </Layout>
+                        <ScrollRestoration />
+                        <LiveReload />
+                    </body>
+                </html>
             </MantineProvider>
         </ColorSchemeProvider>
     );
