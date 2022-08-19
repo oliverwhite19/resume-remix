@@ -105,11 +105,20 @@ export default function Root() {
                             content="My resume and projects website"
                         />
                         <link rel="apple-touch-icon" href="/logo192.png" />
-                        <link href="/fonts/Oxygen.css" rel="stylesheet"></link>
-                        <link href="/fonts/Cairo.css" rel="stylesheet"></link>
                         <link
-                            href="https://fonts.googleapis.com/css?family=Amiko"
-                            rel="stylesheet"
+                            href="/fonts/Oxygen.css"
+                            rel="preload"
+                            as="style"
+                        ></link>
+                        <link
+                            href="/fonts/Cairo.css"
+                            rel="preload"
+                            as="style"
+                        ></link>
+                        <link
+                            href="/fonts/Amiko.css"
+                            rel="preload"
+                            as="style"
                         ></link>
                         <title>Oliver White - Resume</title>
 
@@ -118,6 +127,7 @@ export default function Root() {
                             dangerouslySetInnerHTML={{
                                 __html: classAdd,
                             }}
+                            defer
                         />
                         <Scripts />
                         <MyGlobalStyles />

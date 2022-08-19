@@ -57,6 +57,7 @@ const Header = () => {
                         color="red"
                         src="images/author_.png"
                         alt="A picture of me!"
+                        sx={{ img: { height: '84px', width: '84px' } }}
                     />
                     <P>
                         I am Oliver White and I am a Software Developer with 5
