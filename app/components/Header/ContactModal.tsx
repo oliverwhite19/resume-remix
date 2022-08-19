@@ -19,7 +19,10 @@ const buttonStyle = () => ({
 const ContactModal = () => {
     const { classes } = useStyles();
     return (
-        <Button.Group orientation="vertical">
+        <Button.Group
+            sx={{ width: '50%', minWidth: '20rem', margin: 'auto' }}
+            orientation="vertical"
+        >
             <Button
                 leftIcon={<Mail size={60} />}
                 variant="outline"
