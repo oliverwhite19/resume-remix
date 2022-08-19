@@ -105,14 +105,8 @@ export default function Root() {
                             content="My resume and projects website"
                         />
                         <link rel="apple-touch-icon" href="/logo192.png" />
-                        <link
-                            href="https://fonts.googleapis.com/css?family=Oxygen"
-                            rel="stylesheet"
-                        ></link>
-                        <link
-                            href="https://fonts.googleapis.com/css?family=Cairo"
-                            rel="stylesheet"
-                        ></link>
+                        <link href="/fonts/Oxygen.css" rel="stylesheet"></link>
+                        <link href="/fonts/Cairo.css" rel="stylesheet"></link>
                         <link
                             href="https://fonts.googleapis.com/css?family=Amiko"
                             rel="stylesheet"
