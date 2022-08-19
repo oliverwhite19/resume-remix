@@ -15,7 +15,7 @@ const Resume = ({
     const { classes } = useStyles();
     return (
         <>
-            <Header />
+            <Header withDescription />
             <section className={classes.section}>
                 <WorkExperience employment={employment} />
             </section>

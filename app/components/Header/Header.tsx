@@ -7,7 +7,7 @@ import { screenSizes } from '~/theme';
 import { useState } from 'react';
 import { ContactModal } from './ContactModal';
 
-const Header = () => {
+const Header = ({ withDescription }: { withDescription: boolean }) => {
     const { classes } = useStyles();
 
     const [opened, setOpened] = useState(false);
@@ -33,50 +33,56 @@ const Header = () => {
                     </H1>
                     <ThemeSwitch />
                 </div>
-                <div className={classes.buttonContainer}>
-                    <a
-                        href="/files/OliverWhiteResume.pdf"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                    >
-                        <Button
-                            size={isSmallScreen ? 'md' : 'lg'}
-                            color="red"
-                            compact={isSmallScreen}
-                            variant="outline"
-                        >
-                            Download PDF Resume
-                        </Button>
-                    </a>
+                {withDescription && (
+                    <>
+                        <div className={classes.buttonContainer}>
+                            <a
+                                href="/files/OliverWhiteResume.pdf"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                            >
+                                <Button
+                                    size={isSmallScreen ? 'md' : 'lg'}
+                                    color="red"
+                                    compact={isSmallScreen}
+                                    variant="outline"
+                                >
+                                    Download PDF Resume
+                                </Button>
+                            </a>
 
-                    <Button
-                        onClick={() => setOpened(true)}
-                        size={isSmallScreen ? 'md' : 'lg'}
-                        color="red"
-                        compact={isSmallScreen}
-                        variant="outline"
-                    >
-                        Contact
-                    </Button>
-                </div>
-                <div className={classes.avatarContainer}>
-                    <Avatar
-                        radius="xl"
-                        size="xl"
-                        color="red"
-                        src="images/author_.png"
-                        alt="A picture of me!"
-                        sx={{ img: { height: '84px', width: '84px' } }}
-                    />
-                    <P>
-                        I am Oliver White and I am a Software Developer with 5
-                        years of experience leading and contributing to a wide
-                        variety of projects. I have a degree in Computer
-                        Engineering with a specialization in Software
-                        Engineering. I am experienced with many different fields
-                        from computer hardware to cloud-based software design!
-                    </P>
-                </div>
+                            <Button
+                                onClick={() => setOpened(true)}
+                                size={isSmallScreen ? 'md' : 'lg'}
+                                color="red"
+                                compact={isSmallScreen}
+                                variant="outline"
+                            >
+                                Contact
+                            </Button>
+                        </div>
+                        <div className={classes.avatarContainer}>
+                            <Avatar
+                                radius="xl"
+                                size="xl"
+                                color="red"
+                                src="images/author_.png"
+                                alt="A picture of me!"
+                                sx={{ img: { height: '84px', width: '84px' } }}
+                            />
+                            <P>
+                                I am Oliver White and I am a Software Developer
+                                with 5 years of experience leading and
+                                contributing to a wide variety of projects. I
+                                have a degree in Computer Engineering with a
+                                specialization in Software Engineering. I am
+                                experienced with many different fields from
+                                computer hardware to cloud-based software
+                                design!
+                            </P>
+                        </div>
+                    </>
+                )}
             </Stack>
 
             <Modal
