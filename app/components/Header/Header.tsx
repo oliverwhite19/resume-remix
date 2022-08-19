@@ -1,16 +1,14 @@
 import { ThemeSwitch } from '../ThemeSwitch/themeSwitch';
 import { useStyles } from './Header.styles';
-import { Stack, Button, Avatar, Modal, useMantineTheme } from '@mantine/core';
+import { Stack, Button, Avatar, useMantineTheme } from '@mantine/core';
 import { useMediaQuery } from 'hooks/useMediaQuery';
 import { H1, P } from '../Text';
 import { screenSizes } from '~/theme';
-import { useState } from 'react';
-import { ContactModal } from './ContactModal';
+import { openContextModal } from '@mantine/modals';
 
 const Header = () => {
     const { classes } = useStyles();
 
-    const [opened, setOpened] = useState(false);
     const theme = useMantineTheme();
     const isSmallScreen = useMediaQuery(screenSizes.largeMobile);
 
@@ -50,7 +48,13 @@ const Header = () => {
                     </a>
 
                     <Button
-                        onClick={() => setOpened(true)}
+                        onClick={() =>
+                            openContextModal({
+                                modal: 'contact',
+                                title: 'Contact Me',
+                                innerProps: {},
+                            })
+                        }
                         size={isSmallScreen ? 'md' : 'lg'}
                         color="red"
                         compact={isSmallScreen}
@@ -78,23 +82,6 @@ const Header = () => {
                     </P>
                 </div>
             </Stack>
-
-            <Modal
-                opened={opened}
-                onClose={() => setOpened(false)}
-                title="Contact"
-                centered
-                overlayColor={
-                    theme.colorScheme === 'dark'
-                        ? theme.colors.dark[9]
-                        : theme.colors.gray[2]
-                }
-                overlayOpacity={0.7}
-                overlayBlur={9}
-                fullScreen={isSmallScreen}
-            >
-                <ContactModal />
-            </Modal>
         </>
     );
 };
