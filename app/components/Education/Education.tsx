@@ -4,7 +4,7 @@ import { Paper } from '../Resume/Paper';
 const Education = ({ education }: { education: EducationType[] }) => {
     return (
         <>
-            <h2>Eductation</h2>
+            <h2>Education</h2>
             {education?.map((edu, index) => (
                 <Paper
                     key={index}

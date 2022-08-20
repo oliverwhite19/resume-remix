@@ -1,19 +1,20 @@
-import { Switch, useMantineColorScheme } from '@mantine/core';
+import { ActionIcon, useMantineColorScheme } from '@mantine/core';
+import { SunHigh, MoonStars } from 'tabler-icons-react';
 
 const ThemeSwitch = () => {
     const { colorScheme, toggleColorScheme } = useMantineColorScheme();
     const dark = colorScheme === 'dark';
 
     return (
-        <Switch
-            size="xl"
+        <ActionIcon
+            variant="outline"
+            onClick={() => toggleColorScheme()}
+            color={dark ? undefined : 'dark'}
+            size="lg"
             radius="xs"
-            color="red"
-            onChange={() => toggleColorScheme()}
-            checked={dark}
-            onLabel="Light"
-            offLabel="Dark"
-        />
+        >
+            {dark ? <SunHigh /> : <MoonStars />}
+        </ActionIcon>
     );
 };
 
