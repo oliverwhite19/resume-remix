@@ -1,34 +1,41 @@
-# Welcome to Remix!
+<p align="center">
+  <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter-ts">
+    <img alt="Author" src="./public/images/author_.png" width="60" />
+  </a>
+</p>
+<h1 align="center">
+  Oliver White Resume
+</h1>
+<h2>Remix Version</h2>
 
-- [Remix Docs](https://remix.run/docs)
+This is the repository containing the Remix version of my resume website. So far I have built three versions of my resume and linktree page:
 
-## Deployment
+- [GatsbyJS](https://gatsby.oliverwhite.ca)
+- [Remix](https://remix.oliverwhite.ca)
+- [NextJS](https://next.oliverwhite.ca)
 
-After having run the `create-remix` command and selected "Vercel" as a deployment target, you only need to [import your Git repository](https://vercel.com/new) into Vercel, and it will be deployed.
+The principal reason for these versions is to test out the capabilities of these frameworks and put them through their paces.
 
-If you'd like to avoid using a Git repository, you can also deploy the directory by running [Vercel CLI](https://vercel.com/cli):
+One of these versions is also present at https://oliverwhite.ca.
 
-```sh
-npm i -g vercel
-vercel
-```
+## 🚀 Development
 
-It is generally recommended to use a Git repository, because future commits will then automatically be deployed by Vercel, through its [Git Integration](https://vercel.com/docs/concepts/git).
+1.  **Add your env variables**
+    Navigate into the sites directory and create an environment file
 
-## Development
+    ```shell
+    touch .env.local
+    ```
 
-To run your Remix app locally, make sure your project's local dependencies are installed:
+    This is a template for that environment file
 
-```sh
-npm install
-```
+    ```
+    DATABASE_URL=''
+    ```
 
-Afterwards, start the Remix development server like so:
+2.  **Start developing.**
+    Install packages and launch the site
 
-```sh
-npm run dev
-```
-
-Open up [http://localhost:3000](http://localhost:3000) and you should be ready to go!
-
-If you're used to using the `vercel dev` command provided by [Vercel CLI](https://vercel.com/cli) instead, you can also use that, but it's not needed.
+    ```shell
+    yarn && yarn dev
+    ```
